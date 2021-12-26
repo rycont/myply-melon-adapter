@@ -1,0 +1,27 @@
+{
+  "name": "myply-melon-adapter",
+  "version": "1.0.0",
+  "description": "For myply backend, on deno",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "myply-common": "https://github.com/rycont/myply-common",
+    "node-fetch": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^3.0.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rycont/myply-melon-adapter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rycont/myply-melon-adapter/issues"
+  },
+  "homepage": "https://github.com/rycont/myply-melon-adapter#readme"
+}
