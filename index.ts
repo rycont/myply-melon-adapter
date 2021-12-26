@@ -51,5 +51,6 @@ export async function findSongId(song: Song) {
 export const MelonAdapter: Adaptor = {
   generateURL,
   getPlaylistContent,
-  findSongId
+  findSongId,
+  determinator: ["melon", "kko"]
 }
