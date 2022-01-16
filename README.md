@@ -1,2 +1,5 @@
 # myply-melon-adapter
-For myply backend, on deno
+
+For myply backend
+
+Works with NodeJS
