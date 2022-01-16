@@ -96,7 +96,9 @@ export function generateURL(playlist: Playlist): Promise<string> {
     )
 }
 
-export async function findSongId(song: Song) {
+const REGEX_FIND_BRAKET = /\(.*\)/
+
+export async function findSongId(song: Song): Promise<string | null> {
     try {
         const res = await axios(
             `https://m2.melon.com/search/mobile4web/searchsong_list.htm?keyword=${encodeURIComponent(
@@ -120,6 +122,17 @@ export async function findSongId(song: Song) {
             .split('d-songId="')[1]
             .split('"')[0]
     } catch (e) {
+        if (song.name.match(REGEX_FIND_BRAKET)) {
+            return await findSongId({
+                ...song,
+                name: song.name.replace(REGEX_FIND_BRAKET, "").trim(),
+            })
+        }
+        console.log(
+            `Missed Match`,
+            song.artist + " " + song.name,
+            (e as Error).message
+        )
         return null
     }
 }
