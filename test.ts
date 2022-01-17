@@ -1,4 +1,4 @@
-import { findSongId, getPlaylistContent } from "."
+import { getPlaylistContent } from "."
 
 getPlaylistContent("http://kko.to/5sEzF72fT").then((e) =>
     console.log(e.name, e.description)
