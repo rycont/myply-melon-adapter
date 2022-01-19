@@ -88,7 +88,19 @@ export async function getPlaylistContent(url: string): Promise<Playlist> {
     }
 }
 
-export function generateURL(playlist: Playlist): Promise<string> {
+export function generateURL(
+    playlist: Playlist,
+    auth?: undefined,
+    userAgent?: string
+): Promise<string> {
+    if (userAgent && userAgent.includes("Mac")) {
+        return Promise.resolve(
+            `meloniphone://play/?ctype=1&menuid=0&cid=${playlist.tracks.map(
+                (e) => e.channelIds.melon
+            )}`
+        )
+    }
+
     return Promise.resolve(
         `melonapp://play/?ctype=1&menuid=0&cid=${playlist.tracks.map(
             (e) => e.channelIds.melon
