@@ -163,4 +163,7 @@ export const MelonAdapter: Adaptor = {
         name: "멜론",
         color: "#00CD3C",
     },
+    config: {
+        isPlaylistPlpatformSpecific: true,
+    },
 }
